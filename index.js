@@ -17,7 +17,7 @@ var servicio1 = 1500;  /*seguro auto*/
 var servicio2 = 2000;  /*seguro hogar*/
 var servicio3 = 3000;  /*seguro vida*/
 
-alert("los servicios que ofresemos son seguro de auto (numero 1), seguro de hogar (numero 2), seguro de vida (numero 3)")
+alert("los servicios que ofrecemos son: seguro de auto (numero 1), seguro de hogar (numero 2), seguro de vida (numero 3)")
 let servicioseleccionado = parseInt(prompt("Ingrese el numero del servicio que desea contratar (1, 2 o 3)"));
 
 function precio(servicio1, servicio2, servicio3,){
