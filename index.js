@@ -22,7 +22,12 @@ seguros.push(new servicios("Vida", "oro", 7000, 9));
 alert("planes de seguros de auto 1- bronce, 2- plata, 3- oro");
 alert("planes de seguros de hogar 4- bronce, 5- plata, 6- oro");
 alert("planes de seguros de vida 7- bronce, 8- plata, 9- oro");
-
+for(const id of seguros){
+    console.log(id.nombre);
+    console.log(id.plan);
+    console.log(id.costo);
+}
+console.log("-------------------precios con iva incluido-------------------")
 for(const servicios of seguros){
     servicios.sumaIva();
 }
