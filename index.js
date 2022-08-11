@@ -38,6 +38,10 @@ for(const id of seguros){
 }
 
 let num = parseInt(prompt("Ingrese el numero del plan que desee cotizar"));
+if (num > 10){
+    alert("El numero ingresado no pertenece a ningun plan");
+    num = parseInt(prompt("Vuelva a ingresar su numero, que este dentro del rango de planes (1 - 9)"));
+}
 const finid=seguros.find(numIng=>numIng.id === num); /*numing es el numero ingresado por el cliente*/
 console.log(finid);
 alert("El seguro que selecciono es: seguro de " + finid.nombre  + "\nEl precio de su seguro es: $" + finid.costo +" con iva incluido" + "\nEl plan seleccionado es: Plan " + finid.plan);
