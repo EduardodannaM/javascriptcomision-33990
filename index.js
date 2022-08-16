@@ -19,6 +19,30 @@ seguros.push(new servicios("Hogar", "Oro", 6000, 6));
 seguros.push(new servicios("Vida", "Bronce", 3000, 7));
 seguros.push(new servicios("Vida", "Plata", 4500, 8));
 seguros.push(new servicios("Vida", "Oro", 7000, 9));
+
+const crearCard = (seguroCards) => {
+    const col = document.createElement("div");
+    col.className = "col";
+
+    const contenido = `
+    <div class="card" style="width: 25rem padding 2px;">
+        <div class="card-body">
+            <h5 class="card-title">${seguroCards.nombre}</h5>
+            <h6 class="card-subtitle mb-2 text-muted"> ${seguroCards.plan} - ${seguroCards.costo} </h6>
+            <a href="#" class="card-link">Cotiza</a>
+        </div>
+    </div>`;
+
+    col.innerHTML = contenido; 
+    document.querySelector("#catalogo").append(col);
+};
+for (const seguroCards of seguros) {
+    crearCard(seguroCards);
+}
+
+
+
+
 alert("Panes de seguros de Auto. \n 1- Bronce, 2- Plata, 3- Oro");
 alert("Planes de seguros de Hogar. \n 4- Bronce, 5- Plata, 6- Oro");
 alert("Planes de seguros de Vida. \n 7- Bronce, 8- Plata, 9- Oro");
@@ -45,3 +69,5 @@ if (num > 10){
 const finid=seguros.find(numIng=>numIng.id === num); /*numing es el numero ingresado por el cliente*/
 console.log(finid);
 alert("El seguro que selecciono es: seguro de " + finid.nombre  + "\nEl precio de su seguro es: $" + finid.costo +" con iva incluido" + "\nEl plan seleccionado es: Plan " + finid.plan);
+
+
