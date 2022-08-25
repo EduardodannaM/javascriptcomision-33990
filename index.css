@@ -1,0 +1,14 @@
+h2{
+    display: flex;
+    justify-content: center;
+    color: brown;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
+}
+.btn-primary{
+    display: flex;
+    justify-content: center;
+}
+#seguro{
+    margin-top: 50px;
+}

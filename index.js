@@ -21,6 +21,14 @@ seguros.push(new servicios("Vida", "Bronce", 3000, 7));
 seguros.push(new servicios("Vida", "Plata", 4500, 8));
 seguros.push(new servicios("Vida", "Oro", 7000, 9));
 
+const guardarSeguros = (clave, valor) => {localStorage.setItem(clave, valor)};
+//almaceno mis seguros en local storage 1 por 1  
+for (const servicios of seguros){
+    guardarSeguros(servicios.id, JSON.stringify(servicios))
+}
+//almaceno mis seguros en un array
+guardarSeguros("listaDeSeguros", JSON.stringify(seguros));
+
 const crearCard = (seguroCards, identificador) => {
     const col = document.createElement("div");
     col.className = "col";
@@ -71,14 +79,12 @@ function eventoClick(){
 
 
 // muestro todos los seguros 
-alert("Panes de seguros de Auto. \n 1- Bronce, 2- Plata, 3- Oro");
-alert("Planes de seguros de Hogar. \n 4- Bronce, 5- Plata, 6- Oro");
-alert("Planes de seguros de Vida. \n 7- Bronce, 8- Plata, 9- Oro");
+/*no utilizo mas este console.log ya que agregue todos los servicios al storage
 for(const id of seguros){
     console.log(id.nombre);
     console.log(id.plan);
     console.log(id.costo);
-}
+}*/
 console.log("-------------------precios con iva incluido-------------------")
 for(const servicios of seguros){
     servicios.sumaIva();
@@ -88,7 +94,7 @@ for(const id of seguros){
     console.log(id.plan);
     console.log(id.costo);
 }
-
+/*
 let num = parseInt(prompt("Ingrese el numero del plan que desee cotizar"));
 while(isNaN(num)){
     num= parseInt(prompt("Ingrese un numero del plan que desee cotizar"));
@@ -99,7 +105,8 @@ while(isNaN(num)){
     }
 }
 const finid=seguros.find(numIng=>numIng.id === num); /*numing es el numero ingresado por el cliente*/
+/*
 console.log(finid);
 alert("El seguro que selecciono es: seguro de " + finid.nombre  + "\nEl precio de su seguro es: $" + finid.costo +" con iva incluido" + "\nEl plan seleccionado es: Plan " + finid.plan);
-
+*/
 
