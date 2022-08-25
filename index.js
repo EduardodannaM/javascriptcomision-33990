@@ -94,7 +94,7 @@ for(const id of seguros){
     console.log(id.plan);
     console.log(id.costo);
 }
-/*
+/* No utilizo este codigo ya que puedo tocar las cards creadas y me salta el seguro a cotizar con iva
 let num = parseInt(prompt("Ingrese el numero del plan que desee cotizar"));
 while(isNaN(num)){
     num= parseInt(prompt("Ingrese un numero del plan que desee cotizar"));
