@@ -65,26 +65,7 @@ const mostrarSeguros = (seguroListado, identificador) => {
 const seguroPorCotizar = [];
 
 mostrarSeguros(seguros, "catalogo");
-/*
-for (const seguroCards of seguros) {
-    crearCard(seguroCards);
-}/*
-let botonCoti = document.getElementById(${seguroCards.id})
-botonCoti.addEventListener("click", eventoClick);
-function eventoClick(){
-    console.log("el usuario desea cotizar algun seguro");
-    const msjCoti = document.getElementById("mensajeBtnCotizar");
-    msjCoti.innerHTML = "¿Quieres cotizar este seguro?";
-}*/
 
-
-// muestro todos los seguros 
-/*no utilizo mas este console.log ya que agregue todos los servicios al storage
-for(const id of seguros){
-    console.log(id.nombre);
-    console.log(id.plan);
-    console.log(id.costo);
-}*/
 console.log("-------------------precios con iva incluido-------------------")
 for(const servicios of seguros){
     servicios.sumaIva();
@@ -94,6 +75,8 @@ for(const id of seguros){
     console.log(id.plan);
     console.log(id.costo);
 }
+
+
 /* No utilizo este codigo ya que puedo tocar las cards creadas y me salta el seguro a cotizar con iva
 let num = parseInt(prompt("Ingrese el numero del plan que desee cotizar"));
 while(isNaN(num)){
@@ -110,3 +93,26 @@ console.log(finid);
 alert("El seguro que selecciono es: seguro de " + finid.nombre  + "\nEl precio de su seguro es: $" + finid.costo +" con iva incluido" + "\nEl plan seleccionado es: Plan " + finid.plan);
 */
 
+
+
+/*
+for (const seguroCards of seguros) {
+    crearCard(seguroCards);
+}/*
+let botonCoti = document.getElementById(${seguroCards.id})
+botonCoti.addEventListener("click", eventoClick);
+function eventoClick(){
+    console.log("el usuario desea cotizar algun seguro");
+    const msjCoti = document.getElementById("mensajeBtnCotizar");
+    msjCoti.innerHTML = "¿Quieres cotizar este seguro?";
+}*/
+
+
+
+// muestro todos los seguros 
+/*no utilizo mas este console.log ya que agregue todos los servicios al storage
+for(const id of seguros){
+    console.log(id.nombre);
+    console.log(id.plan);
+    console.log(id.costo);
+}*/
