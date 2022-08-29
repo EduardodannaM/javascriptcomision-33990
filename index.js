@@ -76,43 +76,29 @@ for(const id of seguros){
     console.log(id.costo);
 }
 
+const cotizarSeguroAuto=()=>{
+    let provinciaAuto=document.querySelector("#provinciaAuto").value;
+    let marca=document.querySelector("#marca").value;
+    let year=document.querySelector("#year").value;
+    let planAuto=document.querySelector("#planAuto").value;
 
-/* No utilizo este codigo ya que puedo tocar las cards creadas y me salta el seguro a cotizar con iva
-let num = parseInt(prompt("Ingrese el numero del plan que desee cotizar"));
-while(isNaN(num)){
-    num= parseInt(prompt("Ingrese un numero del plan que desee cotizar"));
+    let divResumen=document.querySelector("#resumenSeguro1");
+    let divResultado=document.querySelector("#resultadoSeguro1");
 
-    if (num > 10){
-        alert("El numero ingresado no pertenece a ningun plan");
-        num = parseInt(prompt("Vuelva a ingresar su numero, que este dentro del rango de planes (1 - 9)"));
+
+    
+
+    
+    if (marca===``|| year===`` || provinciaAuto=== `` || planAuto === ``){
+        mostrarError("#msjErrorCotiAuto", "Falta Seleccionar Opciones");
+        return
     }
+
+    let cotizacionAuto ={provinciaAuto, marca, year, planAuto};
+    document.querySelector("#mensajeSeguro1").style.display="none";
 }
-const finid=seguros.find(numIng=>numIng.id === num); /*numing es el numero ingresado por el cliente*/
-/*
-console.log(finid);
-alert("El seguro que selecciono es: seguro de " + finid.nombre  + "\nEl precio de su seguro es: $" + finid.costo +" con iva incluido" + "\nEl plan seleccionado es: Plan " + finid.plan);
-*/
 
-
-
-/*
-for (const seguroCards of seguros) {
-    crearCard(seguroCards);
-}/*
-let botonCoti = document.getElementById(${seguroCards.id})
-botonCoti.addEventListener("click", eventoClick);
-function eventoClick(){
-    console.log("el usuario desea cotizar algun seguro");
-    const msjCoti = document.getElementById("mensajeBtnCotizar");
-    msjCoti.innerHTML = "¿Quieres cotizar este seguro?";
-}*/
-
-
-
-// muestro todos los seguros 
-/*no utilizo mas este console.log ya que agregue todos los servicios al storage
-for(const id of seguros){
-    console.log(id.nombre);
-    console.log(id.plan);
-    console.log(id.costo);
-}*/
+const mostrarError=(elemento, mensaje)=>{
+    divErrorAuto = document.querySelector(elemento);
+    divErrorAuto.innerHTML = `<p class="alertaErrorAuto">${mensaje}</p>`;
+}

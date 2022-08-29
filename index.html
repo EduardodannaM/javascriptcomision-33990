@@ -16,7 +16,204 @@
     <div id="seguroPorCotizar" class="row">
         <h2>Seguro que deseas cotizar</h2>
     </div>
-
+    
+  <div class="seguros">
+    <h2>Seguro Autos</h2>
+    <div id="msjErrorCotiAuto"></div>
+    <form action="" class="segurosForm">
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Nombre</label>
+        <input type="text" class="form-control" >
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Apellido</label>
+        <input type="text" class="form-control">
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Correo</label>
+        <input type="email" class="form-control">
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Provincia</label>
+        <select name="provinciaAuto" id="provinciaAuto" class="form-select">
+          <option value=""></option>
+          <option value="Buenos Aires">Buenos Aires</option>
+          <option value="Cordoba">Cordoba</option>
+          <option value="Santa Fe">Santa Fe</option>
+          <option value="Mendoza">Mendoza</option>
+          <option value="Tucuman">Tucuman</option>
+          <option value="San Juan">San Juan</option>
+        </select>
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Marca</label>
+        <select name="marca" id="marca" class="form-select">
+          <option value=""></option>
+          <option value="Peugeot">Peugeot</option>
+          <option value="Audi">Audi</option>
+          <option value="BMW">BMW</option>
+          <option value="Toyota">Toyota</option>
+          <option value="Ford">Ford</option>
+        </select>
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Año</label>
+        <select name="year" id="year" class="form-select">
+          <option value=""></option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+        </select>
+      </div>
+      <br>
+      <div class="seguroFormPlan1">
+        <label for="" class="form-label">Plan</label>
+        <select name="planAuto" id="planAuto" class="form-select">
+          <option value=""></option>
+          <option value="Bronce">Bronce</option>
+          <option value="Plata">Plata</option>
+          <option value="Oro">Oro</option>
+        </select>
+      </div>
+      <br>
+      <div class="seguroFormBtn">
+        <input type="button" onclick="cotizarSeguroAuto()" value="Cotizar">
+      </div>
+      <br>
+    </form>
+    <br>
+    <div class="mensajeSeguro1">
+      <h2>Complete la Informacion de su seguro</h2>
+      </div>
+      <br>
+    <div id="resumenSeguro1" style="display: none;"></div>
+    <br>
+    <div id="resultadoSeguro1" style="display: none;"></div>
+    
+  </div>
+  <div class="seguros">
+    <h2>Seguros Hogar</h2>
+    <form action="" class="segurosForm">
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Nombre</label>
+        <input type="text" class="form-control">
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Apellido</label>
+        <input type="text" class="form-control">
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Correo</label>
+        <input type="email" class="form-control">
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Provincia</label>
+        <select name="" id="" class="form-select">
+          <option value=""></option>
+          <option value="">Buenos Aires</option>
+          <option value="">Cordoba</option>
+          <option value="">Santa Fe</option>
+          <option value="">Mendoza</option>
+          <option value="">Tucuman</option>
+          <option value="">San Juan</option>
+        </select>
+      </div>
+      <br>
+      <div class="seguroFormPlan2">
+        <label for="" class="form-label" class="form-select">Plan</label>
+        <select name="" id="">
+          <option value=""></option>
+          <option value="">Bronce</option>
+          <option value="">Plata</option>
+          <option value="">Oro</option>
+        </select>
+      </div>
+      <br>
+      <div class="seguroFormBtn">
+        <button class="" type="submit">Cotizar</button>
+      </div>
+      <br>
+    </form>
+  </div>
+  <div class="seguros">
+    <h2>Seguro Vida</h2>
+    <form action="" class="segurosForm">
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Nombre</label>
+        <input type="text" class="form-control">
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Apellido</label>
+        <input type="text" class="form-control">
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Correo</label>
+        <input type="email" class="form-control">
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Provincia</label>
+        <select name="" id="" class="form-select">
+          <option value=""></option>
+          <option value="">Buenos Aires</option>
+          <option value="">Cordoba</option>
+          <option value="">Santa Fe</option>
+          <option value="">Mendoza</option>
+          <option value="">Tucuman</option>
+          <option value="">San Juan</option>
+        </select>
+      </div>
+      <br>
+      <div class="segurosFormDatos">
+        <label for="" class="form-label">Edad</label>
+        <select name="" id="" class="form-select">
+          <option value=""></option>
+          <option value="">Entre 18 - 25</option>
+          <option value="">Entre 26 - 35</option>
+          <option value="">Entre 36 - 45</option>
+          <option value="">Entre 46 - 55</option>
+          <option value="">56+</option>
+        </select>
+      </div>
+      <br>
+      <div class="seguroFormPlan3">
+        <label for="" class="form-label">Plan</label>
+        <select name="" id="" class="form-select" >
+          <option value=""></option>
+          <option value="">Bronce</option>
+          <option value="">Plata</option>
+          <option value="">Oro</option>
+        </select>
+      </div>
+      <div class="seguroFormBtn">
+        <input type="button" onclick="cotizarSeguro()" value="Cotizar">
+      </div>
+      <br>   
+    </form>
+    <div class="mensajeSeguro3">
+      <h2>Complete la Informacion de su seguro</h2>
+      </div>
+    <div id="resumenSeguro3" style="display: none;"></div>
+    <div id="resultadoSeguro3" style="display: none;"></div>
+  </div>
+  -->
+  <!--
     <div id="seguro" class="container-xl">
         <h2 id="seguroTitulo" class="seguroTitulo">Seguro de Auto</h2>
         <section id="seguroAuto">
@@ -193,7 +390,7 @@
         </section>
         </section>
     </div>
-
+-->
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

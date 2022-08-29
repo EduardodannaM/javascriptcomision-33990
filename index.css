@@ -1,14 +1,62 @@
-h2{
+.seguros{
     display: flex;
-    justify-content: center;
-    color: brown;
-    border-bottom: 2px solid black;
+    flex-direction: column;
+    width: 95%;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    margin: 2rem;
     box-sizing: border-box;
+    align-items: center;
 }
-.btn-primary{
+.segurosForm{
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem; 
+    border: 2px solid brown;
+    width: 80%;
+    box-sizing: content-box;
 }
-#seguro{
-    margin-top: 50px;
+.segurosFormDatos{
+    display: block;
+    max-width: 100%;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 1.5em;
+}
+.seguroFormPlan1{
+   max-width: 100%;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 1.5em; 
+}
+.seguroFormPlan2{
+   max-width: 100%;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 1.5em; 
+}
+.seguroFormPlan3{
+   max-width: 100%;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 1.5em; 
+}
+.seguroFormBtn{
+    max-width: 100%;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 1.5em; 
+}
+
+
+label{
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+h2{
+    font-size: 35px;
+    border-bottom: 1px solid black;
 }
