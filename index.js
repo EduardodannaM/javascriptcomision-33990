@@ -77,6 +77,9 @@ for(const id of seguros){
 }
 
 const cotizarSeguroAuto=()=>{
+    let nombreAuto=document.querySelector("#formAutoNombre").value;
+    let apellidoAuto=document.querySelector("#formAutoApellido").value;
+    let correoAuto=document.querySelector("#formAutoCorreo").value;
     let provinciaAuto=document.querySelector("#provinciaAuto").value;
     let marca=document.querySelector("#marca").value;
     let year=document.querySelector("#year").value;
@@ -89,16 +92,51 @@ const cotizarSeguroAuto=()=>{
     
 
     
-    if (marca===``|| year===`` || provinciaAuto=== `` || planAuto === ``){
+    if (marca===``|| year===`` || provinciaAuto=== `` || planAuto === `` || nombreAuto ===`` || apellidoAuto === `` || correoAuto === ``){
         mostrarError("#msjErrorCotiAuto", "Falta Seleccionar Opciones");
-        return
+        return;
     }
 
     let cotizacionAuto ={provinciaAuto, marca, year, planAuto};
     document.querySelector("#mensajeSeguro1").style.display="none";
+
+    divResumen.style.backgroundColor = "#FFF";
+    divResumen.style.display="block";
+    divResumen.innerHTML= `
+                            <h2> Resumen de cotizacion </h2>
+                                <ul>
+                                    <li> Marca: ${mayuscula(marca)}</li>
+                                    <li> Año: ${mayuscula(year)}</li>
+                                    <li> Provincia: ${mayuscula(provinciaAuto)}</li>
+                                    <li> Plan: ${mayuscula(planAuto)}</li>
+                                </ul>`;
+    let cotizacionFinalAuto = cotizarAuto(cotizacionAuto);
+    divResultado.style.display ="block";
+    divResultado.className="divResultado";
+    divResultado.innerHTML= `<p class="textoCotizacionAuto">${cotizacionFinalAuto}</p>`;                           
+
 }
+
+const mayuscula = (palabra)=> {
+    return palabra.charAt(0).toUpperCase()+palabra.slice(1);
+}
+
 
 const mostrarError=(elemento, mensaje)=>{
     divErrorAuto = document.querySelector(elemento);
     divErrorAuto.innerHTML = `<p class="alertaErrorAuto">${mensaje}</p>`;
+}
+
+const cotizarAuto = (cotizacionAuto)=>{
+    const {planAuto}=cotizacionAuto;
+    let resultadoAuto= 1;
+
+    if(planAuto === "Bronce"){
+        resultadoAuto = 900*1.21; 
+    }else if (planAuto === "Plata"){
+        resultadoAuto = 1200 * 1.21; 
+    }else if(planAuto === "Oro"){
+        resultadoAuto = 2500 * 1.21; 
+    }
+    return resultadoAuto;
 }
