@@ -104,112 +104,124 @@
   </div>
   <div class="seguros">
     <h2>Seguros Hogar</h2>
+    <div id="msjErrorCotiHogar"></div>
     <form action="" class="segurosForm">
       <div class="segurosFormDatos">
         <label for="" class="form-label">Nombre</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" id="formHogarNombre">
       </div>
       <br>
       <div class="segurosFormDatos">
         <label for="" class="form-label">Apellido</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" id="formHogarApellido">
       </div>
       <br>
       <div class="segurosFormDatos">
         <label for="" class="form-label">Correo</label>
-        <input type="email" class="form-control">
+        <input type="email" class="form-control" id="formHogarCorreo">
       </div>
       <br>
       <div class="segurosFormDatos">
         <label for="" class="form-label">Provincia</label>
-        <select name="" id="" class="form-select">
+        <select name="provinciaHogar" id="provinciaHogar" class="form-select">
           <option value=""></option>
-          <option value="">Buenos Aires</option>
-          <option value="">Cordoba</option>
-          <option value="">Santa Fe</option>
-          <option value="">Mendoza</option>
-          <option value="">Tucuman</option>
-          <option value="">San Juan</option>
+          <option value="Buenos Aires">Buenos Aires</option>
+          <option value="Cordoba">Cordoba</option>
+          <option value="Santa Fe">Santa Fe</option>
+          <option value="Mendoza">Mendoza</option>
+          <option value="Tucuman">Tucuman</option>
+          <option value="San Juan">San Juan</option>
         </select>
       </div>
       <br>
       <div class="seguroFormPlan2">
         <label for="" class="form-label" class="form-select">Plan</label>
-        <select name="" id="">
+        <select name="planHogar" id="planHogar">
           <option value=""></option>
-          <option value="">Bronce</option>
-          <option value="">Plata</option>
-          <option value="">Oro</option>
+          <option value="Bronce">Bronce</option>
+          <option value="Plata">Plata</option>
+          <option value="Oro">Oro</option>
         </select>
       </div>
       <br>
       <div class="seguroFormBtn">
-        <button class="" type="submit">Cotizar</button>
+        <input type="button" onclick="cotizarSeguroHogar()" value="Cotizar">
       </div>
       <br>
     </form>
+    <br>
+    <div id="mensajeSeguro2">
+      <h2>Complete la Informacion de su seguro</h2>
+      </div>
+      <br>
+    <div id="resumenSeguro2" style="display: none;"></div>
+    <br>
+    <div id="resultadoSeguro2" style="display: none;"></div>
   </div>
   <div class="seguros">
     <h2>Seguro Vida</h2>
+    <div id="msjErrorCotiVida"></div>
     <form action="" class="segurosForm">
       <div class="segurosFormDatos">
         <label for="" class="form-label">Nombre</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" id="formVidaNombre">
       </div>
       <br>
       <div class="segurosFormDatos">
         <label for="" class="form-label">Apellido</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" id="formVidaApellido">
       </div>
       <br>
       <div class="segurosFormDatos">
         <label for="" class="form-label">Correo</label>
-        <input type="email" class="form-control">
+        <input type="email" class="form-control" id="formVidaCorreo">
       </div>
       <br>
       <div class="segurosFormDatos">
         <label for="" class="form-label">Provincia</label>
-        <select name="" id="" class="form-select">
+        <select name="provinciaVida" id="provinciaVida" class="form-select">
           <option value=""></option>
-          <option value="">Buenos Aires</option>
-          <option value="">Cordoba</option>
-          <option value="">Santa Fe</option>
-          <option value="">Mendoza</option>
-          <option value="">Tucuman</option>
-          <option value="">San Juan</option>
+          <option value="Buenos Aires">Buenos Aires</option>
+          <option value="Cordoba">Cordoba</option>
+          <option value="Santa Fe">Santa Fe</option>
+          <option value="Mendoza">Mendoza</option>
+          <option value="Tucuman">Tucuman</option>
+          <option value="San Juan">San Juan</option>
         </select>
       </div>
       <br>
       <div class="segurosFormDatos">
         <label for="" class="form-label">Edad</label>
-        <select name="" id="" class="form-select">
+        <select name="edadCliente" id="edadCliente" class="form-select">
           <option value=""></option>
-          <option value="">Entre 18 - 25</option>
-          <option value="">Entre 26 - 35</option>
-          <option value="">Entre 36 - 45</option>
-          <option value="">Entre 46 - 55</option>
-          <option value="">56+</option>
+          <option value="18 a 25">Entre 18 - 25</option>
+          <option value="26 a 35">Entre 26 - 35</option>
+          <option value="36 a 45">Entre 36 - 45</option>
+          <option value="46 a 55">Entre 46 - 55</option>
+          <option value="56+">56+</option>
         </select>
       </div>
       <br>
       <div class="seguroFormPlan3">
         <label for="" class="form-label">Plan</label>
-        <select name="" id="" class="form-select" >
+        <select name="planVida" id="planVida" class="form-select" >
           <option value=""></option>
-          <option value="">Bronce</option>
-          <option value="">Plata</option>
-          <option value="">Oro</option>
+          <option value="Bronce">Bronce</option>
+          <option value="Plata">Plata</option>
+          <option value="Oro">Oro</option>
         </select>
       </div>
       <div class="seguroFormBtn">
-        <input type="button" onclick="cotizarSeguro()" value="Cotizar">
+        <input type="button" onclick="cotizarSeguroVida()" value="Cotizar">
       </div>
       <br>   
     </form>
-    <div class="mensajeSeguro3">
+    <div id="mensajeSeguro3">
       <h2>Complete la Informacion de su seguro</h2>
       </div>
+      <br>
     <div id="resumenSeguro3" style="display: none;"></div>
+    <br>
     <div id="resultadoSeguro3" style="display: none;"></div>
   </div>
   -->

@@ -1,0 +1,22 @@
+constantes para cotizar seguro de auto 
+
+const cotizarSeguroAuto la utilizo para traer valores del formulario
+
+Valores que saco del formulario
+
+provinciaAuto provincia en seguro de auto
+nombreAuto nombre en seguro de auto
+apellidoAuto apellido en seguro de auto
+correoAuto correo en seguro de auto
+
+divResumenAuto resumen de cotizacion en seguro de auto
+
+divResultadoAuto resultado de cotizacion en seguro de auto
+
+mostrarErrorAuto muestra error cuando me falta datos en el formulario 
+
+cotizacionAuto utilizo este descontructor para poder crear el div de resumen y resultado
+
+cotizacionFinalAuto utilizo este let para poder agregar el resultado del seguro
+
+cotizarAuto utilizo esta funcion para poder darle el valor al seguro 

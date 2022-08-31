@@ -47,6 +47,7 @@ const crearCard = (seguroCards, identificador) => {
     document.querySelector(`#${identificador}`).append(col);
     //aplico evento para trackear los cliks en el boton cotizar 
     col.onclick = () => {
+
        console.log("el usuario desea cotizar algun seguro");
        seguroPorCotizar.push(seguroCards); // se muestra el seguro que la persona desea cotizar con iva incluido solo puedo cotizar un solo seguro
        mostrarSeguros(seguroPorCotizar, "seguroPorCotizar");
@@ -75,7 +76,7 @@ for(const id of seguros){
     console.log(id.plan);
     console.log(id.costo);
 }
-
+// Utilizo esta funcion para poder traer todos los valores que genera el formulario
 const cotizarSeguroAuto=()=>{
     let nombreAuto=document.querySelector("#formAutoNombre").value;
     let apellidoAuto=document.querySelector("#formAutoApellido").value;
@@ -85,24 +86,25 @@ const cotizarSeguroAuto=()=>{
     let year=document.querySelector("#year").value;
     let planAuto=document.querySelector("#planAuto").value;
 
-    let divResumen=document.querySelector("#resumenSeguro1");
-    let divResultado=document.querySelector("#resultadoSeguro1");
+    let divResumenAuto=document.querySelector("#resumenSeguro1");
+    let divResultadoAuto=document.querySelector("#resultadoSeguro1");
 
 
     
 
-    
+   //Utilizo este If para chequear que el cliente llene todos los campos  
     if (marca===``|| year===`` || provinciaAuto=== `` || planAuto === `` || nombreAuto ===`` || apellidoAuto === `` || correoAuto === ``){
-        mostrarError("#msjErrorCotiAuto", "Falta Seleccionar Opciones");
+        mostrarErrorAuto("#msjErrorCotiAuto", "Falta Seleccionar Opciones");
         return;
     }
 
+//Utilizo descontructor para poder buscar el seguro de auto que eligio el cliente y crear los divs de resultados
     let cotizacionAuto ={provinciaAuto, marca, year, planAuto};
-    document.querySelector("#mensajeSeguro1").style.display="none";
+    document.querySelector("#mensajeSeguro1").style.display="none"; //Oculto el mensaje 1 
 
-    divResumen.style.backgroundColor = "#FFF";
-    divResumen.style.display="block";
-    divResumen.innerHTML= `
+    divResumenAuto.style.backgroundColor = "#FFF";
+    divResumenAuto.style.display="block"; //Muestro el div que tiene el resumen del seguro
+    divResumenAuto.innerHTML= `
                             <h2> Resumen de cotizacion </h2>
                                 <ul>
                                     <li> Marca: ${mayuscula(marca)}</li>
@@ -111,22 +113,23 @@ const cotizarSeguroAuto=()=>{
                                     <li> Plan: ${mayuscula(planAuto)}</li>
                                 </ul>`;
     let cotizacionFinalAuto = cotizarAuto(cotizacionAuto);
-    divResultado.style.display ="block";
-    divResultado.className="divResultado";
-    divResultado.innerHTML= `<p class="textoCotizacionAuto">${cotizacionFinalAuto}</p>`;                           
+    divResultadoAuto.style.display ="block"; // Muestro el Div que tiene el Resultado del seguro que quiero cotizar
+    divResultadoAuto.className="divResultadoAuto";
+    divResultadoAuto.innerHTML= `<p class="textoCotizacionAuto">${cotizacionFinalAuto}</p>`;                           
 
 }
-
+// con esta funcion pongo la primer letra del resumen en mayuscula ejemplo auto --> Auto
 const mayuscula = (palabra)=> {
     return palabra.charAt(0).toUpperCase()+palabra.slice(1);
 }
 
-
-const mostrarError=(elemento, mensaje)=>{
+// Utilizo esta funcion para mostrar error cuando el cliente no llena algun espacio de formulario
+const mostrarErrorAuto=(elemento, mensaje)=>{
     divErrorAuto = document.querySelector(elemento);
     divErrorAuto.innerHTML = `<p class="alertaErrorAuto">${mensaje}</p>`;
 }
 
+//Utilizo esta funcion para poder cotizar el seguro del auto 
 const cotizarAuto = (cotizacionAuto)=>{
     const {planAuto}=cotizacionAuto;
     let resultadoAuto= 1;
@@ -140,3 +143,153 @@ const cotizarAuto = (cotizacionAuto)=>{
     }
     return resultadoAuto;
 }
+// Utilizo esta funcion para poder traer todos los valores que genera el formulario de Hogar
+const cotizarSeguroHogar=()=>{
+    let nombreHogar=document.querySelector("#formHogarNombre").value;
+    let apellidoHogar=document.querySelector("#formHogarApellido").value;
+    let correoHogar=document.querySelector("#formHogarCorreo").value;
+    let provinciaHogar=document.querySelector("#provinciaHogar").value;
+    let planHogar=document.querySelector("#planHogar").value;
+
+    let divResumenHogar=document.querySelector("#resumenSeguro2");
+    let divResultadoHogar=document.querySelector("#resultadoSeguro2");
+
+  //Utilizo este If para chequear que el cliente llene todos los campos  
+    if (nombreHogar===``|| apellidoHogar===`` || correoHogar=== `` || provinciaHogar === `` || planHogar ===``){
+    mostrarErrorHogar("#msjErrorCotiHogar", "Falta Seleccionar Opciones");
+    return;
+    }   
+
+    
+ //Utilizo descontructor para poder buscar el seguro de hogar que eligio el cliente y crear los divs de resultados
+    let cotizacionHogar ={provinciaHogar, planHogar};
+    document.querySelector("#mensajeSeguro2").style.display="none"; //Oculto el mensaje 2 
+
+    divResumenHogar.style.backgroundColor = "#FFF";
+    divResumenHogar.style.display="block"; //Muestro el div que tiene el resumen del seguro
+    divResumenHogar.innerHTML= `
+                            <h2> Resumen de cotizacion </h2>
+                                <ul>
+                                    <li> Provincia: ${mayuscula(provinciaHogar)}</li>
+                                    <li> Plan: ${mayuscula(planHogar)}</li>
+                                </ul>`;
+    let cotizacionFinalHogar = cotizarHogar(cotizacionHogar);
+    divResultadoHogar.style.display ="block"; // Muestro el Div que tiene el Resultado del seguro que quiero cotizar
+    divResultadoHogar.className="divResultadoHogar";
+    divResultadoHogar.innerHTML= `<p class="textoCotizacionHogar">${cotizacionFinalHogar}</p>`;
+
+
+
+}
+
+// utilizo esta funcion para poder mostrar un error cuando el cliente no complete los datos
+
+const mostrarErrorHogar=(elemento, mensaje)=>{
+    divErrorHogar = document.querySelector(elemento);
+    divErrorHogar.innerHTML = `<p class="alertaErrorHogar">${mensaje}</p>`;
+}
+
+// utilizo esta funcion para cotizar el preico del seguro que desea el cliente
+
+const cotizarHogar = (cotizacionHogar)=>{
+    const {planHogar}=cotizacionHogar;
+    let resultadoHogar= 1;
+
+    if(planHogar === "Bronce"){
+        resultadoHogar = 2000*1.21; 
+    }else if (planHogar === "Plata"){
+        resultadoHogar = 4000 * 1.21; 
+    }else if(planHogar === "Oro"){
+        resultadoHogar = 6000 * 1.21; 
+    }
+    return resultadoHogar;
+}
+
+
+
+const cotizarSeguroVida=()=>{
+    let nombreVida=document.querySelector("#formVidaNombre").value;
+    let apellidoVida=document.querySelector("#formVidaApellido").value;
+    let correoVida=document.querySelector("#formVidaCorreo").value;
+    let provinciaVida=document.querySelector("#provinciaVida").value;
+    let planVida=document.querySelector("#planVida").value;
+    let edadCliente=document.querySelector("#edadCliente").value;
+    let divResumenVida=document.querySelector("#resumenSeguro3");
+    let divResultadoVida=document.querySelector("#resultadoSeguro3");
+
+  //Utilizo este If para chequear que el cliente llene todos los campos  
+    if (nombreVida===``|| apellidoVida===`` || correoVida=== `` || provinciaVida === `` || planVida ===`` || edadCliente === ``){
+    mostrarErrorVida("#msjErrorCotiVida", "Falta Seleccionar Opciones");
+    return;
+    }   
+
+    
+ //Utilizo descontructor para poder buscar el seguro de Vida que eligio el cliente y crear los divs de resultados
+    let cotizacionVida ={provinciaVida, planVida, edadCliente};
+    document.querySelector("#mensajeSeguro3").style.display="none"; //Oculto el mensaje 2 
+
+    divResumenVida.style.backgroundColor = "#FFF";
+    divResumenVida.style.display="block"; //Muestro el div que tiene el resumen del seguro
+    divResumenVida.innerHTML= `
+                            <h2> Resumen de cotizacion </h2>
+                                <ul>
+                                    <li> Provincia: ${mayuscula(provinciaVida)}</li>
+                                    <li> Edad del cliente: ${edadCliente}</li>
+                                    <li> Plan: ${mayuscula(planVida)}</li>
+                                </ul>`;
+    let cotizacionFinalVida = cotizarVida(cotizacionVida);
+    divResultadoVida.style.display ="block"; // Muestro el Div que tiene el Resultado del seguro que quiero cotizar
+    divResultadoVida.className="divResultadoVida";
+    divResultadoVida.innerHTML= `<p class="textoCotizacionVida">${cotizacionFinalVida}</p>`;
+
+
+
+}
+
+// utilizo esta funcion para poder mostrar un error cuando el cliente no complete los datos
+
+const mostrarErrorVida=(elemento, mensaje)=>{
+    divErrorVida = document.querySelector(elemento);
+    divErrorVida.innerHTML = `<p class="alertaErrorVida">${mensaje}</p>`;
+}
+
+// utilizo esta funcion para cotizar el preico del seguro que desea el cliente
+
+const cotizarVida = (cotizacionVida)=>{
+    const {planVida}=cotizacionVida;
+    let resultadoVida= 1;
+
+    if(planVida=== "Bronce"){
+        resultadoVida = 3000*1.21; 
+    }else if (planVida=== "Plata"){
+        resultadoVida = 4500 * 1.21; 
+    }else if(planVida === "Oro"){
+        resultadoVida = 7000 * 1.21; 
+    }
+    return resultadoVida;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//prueba traer Id 
+/*
+const buscarId = (id)=> {
+    console.log("seguros", seguros);
+    console.log("id", id)
+    return seguros.filter(seguroXIds=>seguroXIds.servicios.id==id);
+    
+}
+const seguroXId = buscarId(planAuto) 
+console.log("seguroXId", seguroXId)*/
