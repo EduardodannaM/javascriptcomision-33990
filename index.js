@@ -126,7 +126,8 @@ const mayuscula = (palabra)=> {
 // Utilizo esta funcion para mostrar error cuando el cliente no llena algun espacio de formulario
 const mostrarErrorAuto=(elemento, mensaje)=>{
     divErrorAuto = document.querySelector(elemento);
-    divErrorAuto.innerHTML = `<p class="alertaErrorAuto">${mensaje}</p>`;
+    //agrego libreria de error sweetalert2 para cuando no se completan los datos
+    divErrorAuto.innerHTML = alert()/*`<p class="alertaErrorAuto">${mensaje}</p>`;*/ 
 }
 
 //Utilizo esta funcion para poder cotizar el seguro del auto 
@@ -186,7 +187,8 @@ const cotizarSeguroHogar=()=>{
 
 const mostrarErrorHogar=(elemento, mensaje)=>{
     divErrorHogar = document.querySelector(elemento);
-    divErrorHogar.innerHTML = `<p class="alertaErrorHogar">${mensaje}</p>`;
+ //agrego libreria de error sweetalert2 para cuando no se completan los datos
+    divErrorHogar.innerHTML = alert()/*`<p class="alertaErrorHogar">${mensaje}</p>`;*/
 }
 
 // utilizo esta funcion para cotizar el preico del seguro que desea el cliente
@@ -250,7 +252,8 @@ const cotizarSeguroVida=()=>{
 
 const mostrarErrorVida=(elemento, mensaje)=>{
     divErrorVida = document.querySelector(elemento);
-    divErrorVida.innerHTML = `<p class="alertaErrorVida">${mensaje}</p>`;
+    //agrego libreria de error sweetalert2 para cuando no se completan los datos
+    divErrorVida.innerHTML = alert()/*`<p class="alertaErrorVida">${mensaje}</p>`;*/
 }
 
 // utilizo esta funcion para cotizar el preico del seguro que desea el cliente
@@ -268,8 +271,13 @@ const cotizarVida = (cotizacionVida)=>{
     }
     return resultadoVida;
 }
-
-
+const alert = () => {
+    Swal.fire({
+        icon: 'error',
+        title: 'Datos no ingresados',
+        text: 'No completaste todos los campos de datos pedidos para cotizar tu seguro, completálos',
+    });
+}
 
 
 

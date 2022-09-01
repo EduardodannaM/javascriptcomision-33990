@@ -20,3 +20,24 @@ cotizacionAuto utilizo este descontructor para poder crear el div de resumen y r
 cotizacionFinalAuto utilizo este let para poder agregar el resultado del seguro
 
 cotizarAuto utilizo esta funcion para poder darle el valor al seguro 
+
+const cotizarSeguroHogar la utilizo para traer valores del formulario
+
+Valores que saco del formulario
+
+provinciaHogar provincia en seguro de Hogar
+nombreHogar nombre en seguro de Hogar
+apellidoHogar apellido en seguro de Hogar
+correoHogar correo en seguro de Hogar
+
+divResumenHogar resumen de cotizacion en seguro de Hogar
+
+divResultadoHogar resultado de cotizacion en seguro de Hogar
+
+mostrarErrorHogar muestra error cuando me falta datos en el formulario 
+
+cotizacionHogar utilizo este descontructor para poder crear el div de resumen y resultado
+
+cotizacionFinalHogar utilizo este let para poder agregar el resultado del seguro
+
+cotizarHogar utilizo esta funcion para poder darle el valor al seguro 
