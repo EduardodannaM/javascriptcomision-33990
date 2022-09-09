@@ -1,0 +1,64 @@
+[
+    {
+        "nombre": "Auto",
+        "plan": "Bronce",
+        "costo": 900,
+        "id": 1
+    },
+
+    {
+        "nombre": "Auto",
+        "plan": "Plata",
+        "costo": 1200,
+        "id": 2
+    },
+
+    {
+        "nombre": "Auto",
+        "plan": "Oro",
+        "costo": 2500,
+        "id": 3
+    },
+
+    {
+        "nombre": "Hogar",
+        "plan": "Bronce",
+        "costo": 2000,
+        "id": 4
+    },
+
+    {
+        "nombre": "Hogar",
+        "plan": "Plata",
+        "costo": 4000,
+        "id": 5
+    },
+
+    {
+        "nombre": "Hogar",
+        "plan": "Oro",
+        "costo": 6000,
+        "id": 6
+    },
+    
+    {
+        "nombre": "Vida",
+        "plan": "Bronce",
+        "costo": 3000,
+        "id": 7
+    },
+
+    {
+        "nombre": "Vida",
+        "plan": "Plata",
+        "costo": 4500,
+        "id": 8
+    },
+
+    {
+        "nombre": "Vida",
+        "plan": "Oro",
+        "costo": 7000,
+        "id": 9
+    }
+]

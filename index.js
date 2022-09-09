@@ -281,7 +281,41 @@ const alert = () => {
 
 
 
+//agrego fetch
+document.getElementById('jsonBtn').addEventListener('click', cargarJSON);
 
+function cargarJSON(){
+    fetch('seguros.json')
+        .then(function(res) {
+            return res.json();
+        })
+        .then(function(segurosOfrecidos){
+            let html = '';
+            segurosOfrecidos.forEach(function(mostrarSeguros){
+                html += `
+                <li>${mostrarSeguros.nombre} ${mostrarSeguros.plan} ${mostrarSeguros.cosot}</li>
+                `;
+            })
+            document.getElementById('mostrarSegurosJson').innerHTML = html;
+        })
+}
+/*
+fetch('https://jsonplaceholder.typicode.com/posts', {
+< <li>${mostrarSeguros.plan}</li>
+                <li>${mostrarSeguros.cosot}</li>
+                </ul>        
+method: 'POST',
+        body: JSON.stringify({
+            title: 'Seguros',
+            body: 'Seguros que ofrece mi empresa',
+            userId: 1,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
 
 
 
