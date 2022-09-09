@@ -293,7 +293,11 @@ function cargarJSON(){
             let html = '';
             segurosOfrecidos.forEach(function(mostrarSeguros){
                 html += `
+                <ul>
                 <li>${mostrarSeguros.nombre} ${mostrarSeguros.plan} ${mostrarSeguros.cosot}</li>
+                <li>${mostrarSeguros.plan}</li>
+                <li>${mostrarSeguros.costo}</li>
+                </ul>
                 `;
             })
             document.getElementById('mostrarSegurosJson').innerHTML = html;
@@ -301,10 +305,7 @@ function cargarJSON(){
 }
 /*
 fetch('https://jsonplaceholder.typicode.com/posts', {
-< <li>${mostrarSeguros.plan}</li>
-                <li>${mostrarSeguros.cosot}</li>
-                </ul>        
-method: 'POST',
+        method: 'POST',
         body: JSON.stringify({
             title: 'Seguros',
             body: 'Seguros que ofrece mi empresa',
