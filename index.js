@@ -45,7 +45,7 @@ const crearCard = (seguroCards, identificador) => {
 
     col.innerHTML = contenido; 
     document.querySelector(`#${identificador}`).append(col);
-    //aplico evento para trackear los cliks en el boton cotizar 
+ /*   //aplico evento para trackear los cliks en el boton cotizar 
     col.onclick = () => {
 
        console.log("el usuario desea cotizar algun seguro");
@@ -53,7 +53,7 @@ const crearCard = (seguroCards, identificador) => {
        mostrarSeguros(seguroPorCotizar, "seguroPorCotizar");
        const msjCoti = document.getElementById("mensajeBtnCotizar");
        msjCoti.innerText = "¿Queres cotizar este seguro? " +  seguroCards.nombre + "\nCon el plan " + seguroCards.plan; 
-    }
+    }*/
 };
 
 
@@ -101,7 +101,7 @@ const cotizarSeguroAuto=()=>{
 //Utilizo descontructor para poder buscar el seguro de auto que eligio el cliente y crear los divs de resultados
     let cotizacionAuto ={provinciaAuto, marca, year, planAuto};
     document.querySelector("#mensajeSeguro1").style.display="none"; //Oculto el mensaje 1 
-
+    let cotizacionFinalAuto = cotizarAuto(cotizacionAuto);
     divResumenAuto.style.backgroundColor = "#FFF";
     divResumenAuto.style.display="block"; //Muestro el div que tiene el resumen del seguro
     divResumenAuto.innerHTML= `
@@ -111,12 +111,8 @@ const cotizarSeguroAuto=()=>{
                                     <li> Año: ${mayuscula(year)}</li>
                                     <li> Provincia: ${mayuscula(provinciaAuto)}</li>
                                     <li> Plan: ${mayuscula(planAuto)}</li>
-                                </ul>`;
-    let cotizacionFinalAuto = cotizarAuto(cotizacionAuto);
-    divResultadoAuto.style.display ="block"; // Muestro el Div que tiene el Resultado del seguro que quiero cotizar
-    divResultadoAuto.className="divResultadoAuto";
-    divResultadoAuto.innerHTML= `<p class="textoCotizacionAuto">${cotizacionFinalAuto}</p>`;                           
-
+                                    <p class="textoCotizacionAuto">Total: ${cotizacionFinalAuto}</p>
+                                </ul>`;                    
 }
 // con esta funcion pongo la primer letra del resumen en mayuscula ejemplo auto --> Auto
 const mayuscula = (palabra)=> {
@@ -165,7 +161,7 @@ const cotizarSeguroHogar=()=>{
  //Utilizo descontructor para poder buscar el seguro de hogar que eligio el cliente y crear los divs de resultados
     let cotizacionHogar ={provinciaHogar, planHogar};
     document.querySelector("#mensajeSeguro2").style.display="none"; //Oculto el mensaje 2 
-
+    let cotizacionFinalHogar = cotizarHogar(cotizacionHogar);
     divResumenHogar.style.backgroundColor = "#FFF";
     divResumenHogar.style.display="block"; //Muestro el div que tiene el resumen del seguro
     divResumenHogar.innerHTML= `
@@ -173,14 +169,8 @@ const cotizarSeguroHogar=()=>{
                                 <ul>
                                     <li> Provincia: ${mayuscula(provinciaHogar)}</li>
                                     <li> Plan: ${mayuscula(planHogar)}</li>
+                                    <p class="textoCotizacionHogar">Total: ${cotizacionFinalHogar}</p>
                                 </ul>`;
-    let cotizacionFinalHogar = cotizarHogar(cotizacionHogar);
-    divResultadoHogar.style.display ="block"; // Muestro el Div que tiene el Resultado del seguro que quiero cotizar
-    divResultadoHogar.className="divResultadoHogar";
-    divResultadoHogar.innerHTML= `<p class="textoCotizacionHogar">${cotizacionFinalHogar}</p>`;
-
-
-
 }
 
 // utilizo esta funcion para poder mostrar un error cuando el cliente no complete los datos
@@ -229,7 +219,7 @@ const cotizarSeguroVida=()=>{
  //Utilizo descontructor para poder buscar el seguro de Vida que eligio el cliente y crear los divs de resultados
     let cotizacionVida ={provinciaVida, planVida, edadCliente};
     document.querySelector("#mensajeSeguro3").style.display="none"; //Oculto el mensaje 2 
-
+    let cotizacionFinalVida = cotizarVida(cotizacionVida);
     divResumenVida.style.backgroundColor = "#FFF";
     divResumenVida.style.display="block"; //Muestro el div que tiene el resumen del seguro
     divResumenVida.innerHTML= `
@@ -238,14 +228,8 @@ const cotizarSeguroVida=()=>{
                                     <li> Provincia: ${mayuscula(provinciaVida)}</li>
                                     <li> Edad del cliente: ${edadCliente}</li>
                                     <li> Plan: ${mayuscula(planVida)}</li>
+                                    <p class="textoCotizacionVida">Total: ${cotizacionFinalVida}</p>
                                 </ul>`;
-    let cotizacionFinalVida = cotizarVida(cotizacionVida);
-    divResultadoVida.style.display ="block"; // Muestro el Div que tiene el Resultado del seguro que quiero cotizar
-    divResultadoVida.className="divResultadoVida";
-    divResultadoVida.innerHTML= `<p class="textoCotizacionVida">${cotizacionFinalVida}</p>`;
-
-
-
 }
 
 // utilizo esta funcion para poder mostrar un error cuando el cliente no complete los datos
@@ -291,48 +275,31 @@ function cargarJSON(){
         })
         .then(function(segurosOfrecidos){
             let html = '';
+                html += `<h2 id="tituloDivSeguros"> Listado de Seguros</h2>`
             segurosOfrecidos.forEach(function(mostrarSeguros){
                 html += `
                 <ul>
-                <li>${mostrarSeguros.nombre} ${mostrarSeguros.plan} ${mostrarSeguros.cosot}</li>
+                <li>Seguro</li>
+                <li>${mostrarSeguros.nombre}</li>
                 <li>${mostrarSeguros.plan}</li>
                 <li>${mostrarSeguros.costo}</li>
+                <button id="btnCotizar">Cotiza</button> 
                 </ul>
                 `;
             })
             document.getElementById('mostrarSegurosJson').innerHTML = html;
         })
+}/*
+onclick="llevarASeguro()"
+llevarAseguro(mostrarSeguros.nombre){
+    if(nombre == )
 }
 /*
-fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        body: JSON.stringify({
-            title: 'Seguros',
-            body: 'Seguros que ofrece mi empresa',
-            userId: 1,
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
+col.onclick = () => {
 
-
-
-
-
-
-
-
-
-//prueba traer Id 
-/*
-const buscarId = (id)=> {
-    console.log("seguros", seguros);
-    console.log("id", id)
-    return seguros.filter(seguroXIds=>seguroXIds.servicios.id==id);
-    
-}
-const seguroXId = buscarId(planAuto) 
-console.log("seguroXId", seguroXId)*/
+    console.log("el usuario desea cotizar algun seguro");
+    seguroPorCotizar.push(seguroCards); // se muestra el seguro que la persona desea cotizar con iva incluido solo puedo cotizar un solo seguro
+    mostrarSeguros(seguroPorCotizar, "seguroPorCotizar");
+    const msjCoti = document.getElementById("mensajeBtnCotizar");
+    msjCoti.innerText = "¿Queres cotizar este seguro? " +  seguroCards.nombre + "\nCon el plan " + seguroCards.plan; 
+ }*/

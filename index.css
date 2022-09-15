@@ -60,3 +60,31 @@ h2{
     font-size: 35px;
     border-bottom: 1px solid black;
 }
+
+.mostrarSegurosJson{
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    margin: 2rem;
+    padding: 15px;
+    justify-content: center;
+}
+ul{
+    border: solid 3px rgba(146, 45, 45, 0.678);
+    margin: 1rem;
+    height: 100%;
+    width: 150px;
+    font-size: 18px;
+    list-style: none;
+    padding: 10px;
+    background-color: rgba(165, 42, 42, 0.158);
+}
+#tituloDivSeguros{
+    margin: 3px;
+    width: 100%;
+    text-align: center;
+}
+#resumenSeguro3{
+    display: block;
+    
+}
