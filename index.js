@@ -292,20 +292,15 @@ function cargarJSON(){
             })
             document.getElementById('mostrarSegurosJson').innerHTML = html;
         })
-}/*
-onclick="llevarASeguro()"
-llevarAseguro(mostrarSeguros.nombre){
-    if(nombre == );
-}*/
+}
 /*
-col.onclick = () => {
+function direccionarSeguro(){
+    if(segurosOfrecidos.nombre == Auto){
 
-    console.log("el usuario desea cotizar algun seguro");
-    seguroPorCotizar.push(mostrarSeguros); // se muestra el seguro que la persona desea cotizar con iva incluido solo puedo cotizar un solo seguro
-    mostrarSeguros(mostrarSeguros, "seguroPorCotizar");
-    const msjCoti = document.getElementById("jsonBtn");
-    msjCoti.innerText = "¿Queres cotizar este seguro? " +  segurosOfrecidos.nombre + "\nCon el plan " + segurosOfrecidos.plan; 
- *//*
-    mostrarSeguros(seguros, "seguroPorCotizar")
+    }else if(segurosOfrecidos == Hogar){
 
-    */
+    }else if(segurosOfrecidos == Vida){
+
+    }
+
+}*/
