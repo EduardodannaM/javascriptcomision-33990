@@ -29,7 +29,10 @@ for (const servicios of seguros){
 //almaceno mis seguros en un array
 guardarSeguros("listaDeSeguros", JSON.stringify(seguros));
 
-const crearCard = (seguroCards, identificador) => {
+
+//funciones que quiero sacar no me sirven 
+
+/*const crearCard = (seguroCards, identificador) => {
     const col = document.createElement("div");
     col.className = "col";
     //creo la lista de seguros 
@@ -42,7 +45,7 @@ const crearCard = (seguroCards, identificador) => {
             <p id="mensajeBtnCotizar"></p>
         </div>
     </div>`;
-
+/*
     col.innerHTML = contenido; 
     document.querySelector(`#${identificador}`).append(col);
  /*   //aplico evento para trackear los cliks en el boton cotizar 
@@ -53,19 +56,19 @@ const crearCard = (seguroCards, identificador) => {
        mostrarSeguros(seguroPorCotizar, "seguroPorCotizar");
        const msjCoti = document.getElementById("mensajeBtnCotizar");
        msjCoti.innerText = "¿Queres cotizar este seguro? " +  seguroCards.nombre + "\nCon el plan " + seguroCards.plan; 
-    }*/
-};
+    }
+}*/
 
 
 //funcion para mostrar el seguro que el cliente desea cotizar 
-const mostrarSeguros = (seguroListado, identificador) => {
+/*const mostrarSeguros = (seguroListado, identificador) => {
     for (const seguroCards of seguroListado) {
         crearCard(seguroCards, identificador);
     }
 }
 const seguroPorCotizar = [];
 
-mostrarSeguros(seguros, "catalogo");
+mostrarSeguros(seguros, "catalogo");*/
 
 console.log("-------------------precios con iva incluido-------------------")
 for(const servicios of seguros){
@@ -292,14 +295,17 @@ function cargarJSON(){
 }/*
 onclick="llevarASeguro()"
 llevarAseguro(mostrarSeguros.nombre){
-    if(nombre == )
-}
+    if(nombre == );
+}*/
 /*
 col.onclick = () => {
 
     console.log("el usuario desea cotizar algun seguro");
-    seguroPorCotizar.push(seguroCards); // se muestra el seguro que la persona desea cotizar con iva incluido solo puedo cotizar un solo seguro
-    mostrarSeguros(seguroPorCotizar, "seguroPorCotizar");
-    const msjCoti = document.getElementById("mensajeBtnCotizar");
-    msjCoti.innerText = "¿Queres cotizar este seguro? " +  seguroCards.nombre + "\nCon el plan " + seguroCards.plan; 
- }*/
+    seguroPorCotizar.push(mostrarSeguros); // se muestra el seguro que la persona desea cotizar con iva incluido solo puedo cotizar un solo seguro
+    mostrarSeguros(mostrarSeguros, "seguroPorCotizar");
+    const msjCoti = document.getElementById("jsonBtn");
+    msjCoti.innerText = "¿Queres cotizar este seguro? " +  segurosOfrecidos.nombre + "\nCon el plan " + segurosOfrecidos.plan; 
+ *//*
+    mostrarSeguros(seguros, "seguroPorCotizar")
+
+    */
