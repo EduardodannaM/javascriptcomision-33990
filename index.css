@@ -88,3 +88,9 @@ ul{
     display: block;
     
 }
+body{
+    background-color: rgba(220, 20, 60, 0.247);
+}
+.bg-primary{
+    background-color: rgb(150, 42, 50)  !important;
+}
